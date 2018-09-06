@@ -1,0 +1,12 @@
+APP --> job.waitForCompletion(true) ? 0 : 1  (job类)  -->  submit（job类）  --》  
+final JobSubmitter submitter = getJobSubmitter(cluster.getFileSystem(), cluster.getClient()); 得到JobSubmitter类
+---》status = ugi.doAs(new PrivilegedExceptionAction<JobStatus>() {
+      public JobStatus run() throws IOException, InterruptedException, 
+      ClassNotFoundException {
+        return submitter.submitJobInternal(Job.this, cluster);
+      }
+    });得到JobStatus类  --》 submitter.submitJobInternal(Job.this, cluster);执行JobSubmitter类中的submitJobInternal(Job job, Cluster cluster) ，返回JobStatus类  --》
+    JobID jobId = submitClient.getNewJobID();调用ClientProtocol类getNewJobID
+
+
+   

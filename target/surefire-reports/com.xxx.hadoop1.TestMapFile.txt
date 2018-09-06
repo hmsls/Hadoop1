@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------------
+Test set: com.xxx.hadoop1.TestMapFile
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.94 sec <<< FAILURE!
+com.xxx.hadoop1.TestMapFile.testSearchClosest()  Time elapsed: 0.576 sec  <<< FAILURE!
+java.io.EOFException
+	at java.io.DataInputStream.readFully(DataInputStream.java:197)
+	at java.io.DataInputStream.readFully(DataInputStream.java:169)
+	at org.apache.hadoop.io.SequenceFile$Reader.init(SequenceFile.java:1915)
+	at org.apache.hadoop.io.SequenceFile$Reader.initialize(SequenceFile.java:1880)
+	at org.apache.hadoop.io.SequenceFile$Reader.<init>(SequenceFile.java:1829)
+	at org.apache.hadoop.io.MapFile$Reader.createDataFileReader(MapFile.java:456)
+	at org.apache.hadoop.io.MapFile$Reader.open(MapFile.java:429)
+	at org.apache.hadoop.io.MapFile$Reader.<init>(MapFile.java:399)
+	at org.apache.hadoop.io.MapFile$Reader.<init>(MapFile.java:408)
+	at com.xxx.hadoop1.TestMapFile.testSearchClosest(TestMapFile.java:76)
+
+com.xxx.hadoop1.TestMapFile.testWrite()  Time elapsed: 0.317 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1012)
+	at org.apache.hadoop.util.Shell.runCommand(Shell.java:483)
+	at org.apache.hadoop.util.Shell.run(Shell.java:456)
+	at org.apache.hadoop.util.Shell$ShellCommandExecutor.execute(Shell.java:722)
+	at org.apache.hadoop.util.Shell.execCommand(Shell.java:815)
+	at org.apache.hadoop.util.Shell.execCommand(Shell.java:798)
+	at org.apache.hadoop.fs.RawLocalFileSystem.setPermission(RawLocalFileSystem.java:731)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:225)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:209)
+	at org.apache.hadoop.fs.RawLocalFileSystem.createOutputStreamWithMode(RawLocalFileSystem.java:305)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:294)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:326)
+	at org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer.<init>(ChecksumFileSystem.java:393)
+	at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:456)
+	at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:435)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:909)
+	at org.apache.hadoop.io.SequenceFile$Writer.<init>(SequenceFile.java:1135)
+	at org.apache.hadoop.io.SequenceFile$RecordCompressWriter.<init>(SequenceFile.java:1441)
+	at org.apache.hadoop.io.SequenceFile.createWriter(SequenceFile.java:275)
+	at org.apache.hadoop.io.MapFile$Writer.<init>(MapFile.java:275)
+	at org.apache.hadoop.io.MapFile$Writer.<init>(MapFile.java:105)
+	at com.xxx.hadoop1.TestMapFile.testWrite(TestMapFile.java:27)
+
+com.xxx.hadoop1.TestMapFile.testReader()  Time elapsed: 0.045 sec  <<< FAILURE!
+java.io.EOFException
+	at java.io.DataInputStream.readFully(DataInputStream.java:197)
+	at java.io.DataInputStream.readFully(DataInputStream.java:169)
+	at org.apache.hadoop.io.SequenceFile$Reader.init(SequenceFile.java:1915)
+	at org.apache.hadoop.io.SequenceFile$Reader.initialize(SequenceFile.java:1880)
+	at org.apache.hadoop.io.SequenceFile$Reader.<init>(SequenceFile.java:1829)
+	at org.apache.hadoop.io.MapFile$Reader.createDataFileReader(MapFile.java:456)
+	at org.apache.hadoop.io.MapFile$Reader.open(MapFile.java:429)
+	at org.apache.hadoop.io.MapFile$Reader.<init>(MapFile.java:399)
+	at org.apache.hadoop.io.MapFile$Reader.<init>(MapFile.java:408)
+	at com.xxx.hadoop1.TestMapFile.testReader(TestMapFile.java:43)
+
